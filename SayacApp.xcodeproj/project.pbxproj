@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D56821A828C7BC6200FB7EE3 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56821A728C7BC6200FB7EE3 /* DateViewController.swift */; };
 		D58A815328C7B56000CA9308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A815228C7B56000CA9308 /* AppDelegate.swift */; };
 		D58A815528C7B56000CA9308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A815428C7B56000CA9308 /* SceneDelegate.swift */; };
 		D58A815728C7B56000CA9308 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A815628C7B56000CA9308 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D56821A728C7BC6200FB7EE3 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		D58A814F28C7B56000CA9308 /* SayacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SayacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58A815228C7B56000CA9308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58A815428C7B56000CA9308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				D58A816028C7B56300CA9308 /* LaunchScreen.storyboard */,
 				D58A816328C7B56300CA9308 /* Info.plist */,
 				D58A815B28C7B56000CA9308 /* SayacApp.xcdatamodeld */,
+				D56821A728C7BC6200FB7EE3 /* DateViewController.swift */,
 			);
 			path = SayacApp;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D56821A828C7BC6200FB7EE3 /* DateViewController.swift in Sources */,
 				D58A815728C7B56000CA9308 /* ViewController.swift in Sources */,
 				D58A815328C7B56000CA9308 /* AppDelegate.swift in Sources */,
 				D58A815528C7B56000CA9308 /* SceneDelegate.swift in Sources */,
