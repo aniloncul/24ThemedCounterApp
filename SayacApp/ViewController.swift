@@ -9,7 +9,27 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var timeLabel: UILabel!
+    func makeLabelShine(label: UILabel) {
+        label.layer.shadowColor = UIColor.yellow.cgColor
+        label.layer.shadowRadius = 10.0
+        label.layer.shadowOpacity = 1.0
+        label.shadowOffset = .zero
+    }
+    
+    func makeImageLabelAnimate(label: UIView) {
+        UIView.animate(withDuration: 0.7, delay: 0, options: [.autoreverse, .curveEaseInOut, .repeat, .allowUserInteraction], animations: { () -> Void  in
+            label.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)},
+                        completion: {(finished: Bool) -> Void in
+            label.layer.shadowRadius = 0.0
+            self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        
+        })
+    }
+    
+   
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var timeLabel2: UILabel!
+    @IBOutlet weak var imageLabel: UIView!
     
     var hrs: Int = 0
     var mins: Int = 0
@@ -18,6 +38,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timeLabel.text = "00 : 00 : 00"
+        makeLabelShine(label: timeLabel)
+        
         
     }
     
@@ -48,6 +70,8 @@ class ViewController: UIViewController {
             
             updateLabel()
             startTimer()
+            
+            makeImageLabelAnimate(label: imageLabel)
                 
         }
         
@@ -74,6 +98,7 @@ class ViewController: UIViewController {
     
     private func updateLabel() {
         timeLabel.text = " \(hrs) : \(mins) : \(secs)"
+        
     }
 }
 
