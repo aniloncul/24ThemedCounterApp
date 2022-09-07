@@ -34,10 +34,11 @@ class ViewController: UIViewController {
     var hrs: Int = 0
     var mins: Int = 0
     var secs: Int = 0
+    var days: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeLabel.text = "00 : 00 : 00"
+        timeLabel.text = "00 : 00 : 00 : 00"
         makeLabelShine(label: timeLabel)
         
         
@@ -58,15 +59,18 @@ class ViewController: UIViewController {
         self.title = name
         let difference = floor(targetDate.timeIntervalSince(Date()))
         if difference > 0.0 {
-            let hours: Int = Int(difference) / 3600
-            let remainder: Int = Int(difference) - (hours * 3600 )
+            let Days: Int = Int(difference) / 86400
+            let remainderHours: Int = Int(difference) - (Days * 86400)
+            let hours: Int = remainderHours / 3600
+            let remainder: Int = Int(difference) - (Days * 86400) - (hours * 3600 )
             let minutes: Int = remainder / 60
-            let seconds: Int = Int(difference) - (hours * 3600 ) - (minutes * 60 )
+            let seconds: Int = Int(difference) - (Days * 86400) - (hours * 3600 ) - (minutes * 60 )
             
-            print(" \(hours) : \(minutes) : \(seconds)")
+            print(" \(Days) :\(hours) : \(minutes) : \(seconds)")
             hrs = hours
             mins = minutes
             secs = seconds
+            days = Days
             
             updateLabel()
             startTimer()
@@ -92,12 +96,18 @@ class ViewController: UIViewController {
                 self.mins = 59
                 self.secs = 59
             }
+            else if self.days > 0 && self.hrs == 0 && self.mins == 0 && self.secs == 0 {
+                self.days = self.days - 1
+                self.hrs = 23
+                self.mins = 59
+                self.secs = 59
+            }
             self.updateLabel()
         })
     }
     
     private func updateLabel() {
-        timeLabel.text = " \(hrs) : \(mins) : \(secs)"
+        timeLabel.text = " \(days) : \(hrs) : \(mins) : \(secs)"
         
     }
 }
